@@ -34,6 +34,7 @@
     "preferred-install": {
       "cpsit/auditor": "source",
       "dwenzel/reporter": "source",
+      "dwenzel/reporter-api": "source",
       "*": "dist"
     }
   },
@@ -56,10 +57,13 @@
     "typo3/cms-tstemplate": "^9.5",
     "typo3/cms-viewpage": "^9.5",
     "helhum/config-loader": "^0.11",
-    "helhum/typo3-console": "^5.6"
+    "helhum/typo3-console": "^5.6",
+    "ext-json": "*",
+    "cpsit/auditor": "^0.4.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
+    "cpsit/auditor": "dev-develop as 0.4.0",
     "dwenzel/reporter": "dev-develop as 0.4.0",
     "dwenzel/reporter-api": "dev-develop",
     "nimut/testing-framework": "^4.1"
