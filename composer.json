@@ -10,12 +10,16 @@
       "email": "der-wenzel@gmx.de"
     }
   ],
-  "repositories": [
-    {
+  "repositories": {
+    "reporter-api": {
       "type": "vcs",
       "url": "git@github.com:dwenzel/reporter-api.git"
+    },
+    "api-token": {
+      "type": "vcs",
+      "url": "git@github.com:CPS-IT/api-token.git"
     }
-  ],
+  },
   "extra": {
     "typo3/cms": {
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
@@ -29,7 +33,7 @@
     "vendor-dir": "app/vendor",
     "web-dir": "app/web",
     "platform": {
-      "php": "7.2"
+      "php": "7.4"
     },
     "preferred-install": {
       "composer/composer": "source",
@@ -41,11 +45,12 @@
     "allow-plugins": {
       "typo3/cms-composer-installers": true,
       "typo3/class-alias-loader": true,
-      "helhum/typo3-console-plugin": true
+      "helhum/typo3-console-plugin": true,
+      "cpsit/auditor": true
     }
   },
   "require": {
-    "typo3/minimal": "^9.5",
+    "typo3/cms-core": "^9.5",
     "typo3/cms-about": "^9.5",
     "typo3/cms-adminpanel": "^9.5",
     "typo3/cms-belog": "^9.5",
@@ -62,17 +67,16 @@
     "typo3/cms-t3editor": "^9.5",
     "typo3/cms-tstemplate": "^9.5",
     "typo3/cms-viewpage": "^9.5",
-    "helhum/config-loader": "^0.11",
-    "helhum/typo3-console": "^5.6",
-    "ext-json": "*",
-    "cpsit/auditor": "^0.4.0"
+    "helhum/config-loader": "~0.11",
+    "helhum/typo3-console": "^5.8",
+    "ext-json": "*"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-master",
     "composer/composer": "*",
     "cpsit/auditor": "dev-develop as 0.4.0",
     "dwenzel/reporter": "dev-develop as 0.4.0",
-    "dwenzel/reporter-api": "dev-develop",
+    "dwenzel/reporter-api": "dev-develop as 0.4.0",
+    "fr/api-token": "dev-feature/version9compatible as 0.7",
     "nimut/testing-framework": "^4.1"
   },
   "autoload-dev": {
