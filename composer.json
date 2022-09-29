@@ -32,10 +32,16 @@
       "php": "7.2"
     },
     "preferred-install": {
+      "composer/composer": "source",
       "cpsit/auditor": "source",
       "dwenzel/reporter": "source",
       "dwenzel/reporter-api": "source",
       "*": "dist"
+    },
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true,
+      "helhum/typo3-console-plugin": true
     }
   },
   "require": {
@@ -63,6 +69,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
+    "composer/composer": "*",
     "cpsit/auditor": "dev-develop as 0.4.0",
     "dwenzel/reporter": "dev-develop as 0.4.0",
     "dwenzel/reporter-api": "dev-develop",

@@ -3,9 +3,9 @@ version: '3.6'
 services:
   web:
     environment:
-      - PHP_IDE_CONFIG=serverName=reporter.ddev.site
-      #- TYPO3_CONTEXT=Development/Local
-      #- ENV_FILE_PATH=/var/www/html/app/env.yml
+      - TYPO3_CONTEXT=Development
+      - ENV_FILE_PATH=/var/www/html/.ddev/env.yml
+      - PHP_IDE_CONFIG=serverName=${DDEV_SITENAME}.ddev.site
       #- TYPO3_ENCRYPTION_KEY=ef084375f48150845a5d5e4a244040581a9cffafcf6ee36b0b8ee51fecbf66b4e8c5696a8497b375da5564db01ad870a
       #- TYPO3_INSTALL=$$P$$C2YkkKDzO7cXKMvyYdw7/0IK1RLyNv/
       #- TYPO3_DB_NAME=db
