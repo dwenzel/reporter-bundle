@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  web:
+    tmpfs:
+      # typo3 8 and below
+      - "/var/www/html/$DDEV_DOCROOT/typo3temp:uid=$DDEV_UID,gid=$DDEV_GID"
+      #ddev internal
+      - "/tmp:uid=$DDEV_UID,gid=$DDEV_GID"
+      - "/var/log/nginx:uid=101,gid=4"
+      - "/var/log/apache2:gid=4"
+      # typo3 9+
+      - "/var/www/html/var/log:uid=$DDEV_UID,gid=$DDEV_GID"
+      - "/var/www/html/var/cache:uid=$DDEV_UID,gid=$DDEV_GID"
+      - "/var/www/html/var/lock:uid=$DDEV_UID,gid=$DDEV_GID"
+      - "/var/www/html/var/session:uid=$DDEV_UID,gid=$DDEV_GID"
+      - "/var/www/html/var/extensionmanager:uid=$DDEV_UID,gid=$DDEV_GID"
+  db:
+    tmpfs:
+      - "/tmp:uid=$DDEV_UID,gid=$DDEV_GID"

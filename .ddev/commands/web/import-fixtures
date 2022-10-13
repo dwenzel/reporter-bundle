@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -e
+
+## Description: Import static database fixtures, located in .ddev/fixtures/*.sql or any other given directory.
+## Usage: import-fixtures <path>
+## Example: "ddev import-fixtures" or "ddev import-fixtures path/to/fixtures"
+
+function _progress() {
+  # shellcheck disable=SC2059
+  [[ "$2" ]] && printf "$1\n" || printf "%s " "$1"
+}
+function _done() {
+  _progress "\e[32mDone\e[39m" true
+}
+function _error() {
+  _progress "\e[31m$1\e[39m" true
+}
+
+# Parse fixtures directory
+fixturesDirectory="/var/www/html/${1-.ddev/fixtures}"
+
+# Early return if directory does not exist
+if [[ ! -d "${fixturesDirectory}" ]]; then
+  >&2 _error "Directory \"${fixturesDirectory}\" does not exist." && exit 1
+fi
+
+# Import all fixture files in given directory
+fixturesFiles="$(find "${fixturesDirectory}" -iname '*.sql' -type f | sort)"
+for file in ${fixturesFiles}; do
+  _progress "Importing \"${file}\"..."
+  if mysql -udb -pdb db < "${file}" 2>/dev/null; then
+    _done
+  else
+    exitCode=$?
+    _error "Failed (exit status $exitCode)"
+    exit $exitCode
+  fi
+done

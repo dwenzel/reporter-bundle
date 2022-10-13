@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  web:
+    environment:
+      - TYPO3_CONTEXT=Development
+      - ENV_FILE_PATH=/var/www/html/.ddev/env.yml
+      - PHP_IDE_CONFIG=serverName=${DDEV_SITENAME}.ddev.site
+      - COMPOSER_ALLOW_XDEBUG=1
+      #- TYPO3_ENCRYPTION_KEY=ef084375f48150845a5d5e4a244040581a9cffafcf6ee36b0b8ee51fecbf66b4e8c5696a8497b375da5564db01ad870a
+      #- TYPO3_INSTALL=$$P$$C2YkkKDzO7cXKMvyYdw7/0IK1RLyNv/
+      #- TYPO3_DB_NAME=db
+      #- TYPO3_DB_HOST=db
+      #- TYPO3_DB_PASS=db
+      #- TYPO3_DB_USER=db
+      #- LANG=de_DE.utf8
+      #- LANGUAGE=de_DE:de
+      #- LC_ALL=de_DE.utf8

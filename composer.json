@@ -1,0 +1,97 @@
+{
+  "name": "dwenzel/reporter-bundle",
+  "description": "Test project bundle for the reporter TYPO3 extension",
+  "type": "project",
+  "homepage": "https://github.com/dwenzel/reporter-bundle",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Dirk Wenzel",
+      "email": "der-wenzel@gmx.de"
+    }
+  ],
+  "repositories": {
+    "reporter-api": {
+      "type": "vcs",
+      "url": "git@github.com:dwenzel/reporter-api.git"
+    },
+    "api-token": {
+      "type": "vcs",
+      "url": "git@github.com:CPS-IT/api-token.git"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": "app/web"
+    },
+    "helhum/typo3-console": {
+      "install-extension-dummy": false
+    }
+  },
+  "config": {
+    "vendor-dir": "app/vendor",
+    "web-dir": "app/web",
+    "platform": {
+      "php": "8.1"
+    },
+    "preferred-install": {
+      "composer/composer": "source",
+      "cpsit/auditor": "source",
+      "dwenzel/reporter": "source",
+      "dwenzel/reporter-api": "source",
+      "cpsit/api-token": "source",
+      "*": "dist"
+    },
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true,
+      "helhum/typo3-console-plugin": true,
+      "cpsit/auditor": true
+    }
+  },
+  "require": {
+    "typo3/cms-core": "^11.5",
+    "typo3/cms-about": "^11.5",
+    "typo3/cms-adminpanel": "^11.5",
+    "typo3/cms-belog": "^11.5",
+    "typo3/cms-beuser": "^11.5",
+    "typo3/cms-fluid-styled-content": "^11.5",
+    "typo3/cms-form": "^11.5",
+    "typo3/cms-impexp": "^11.5",
+    "typo3/cms-info": "^11.5",
+    "typo3/cms-lowlevel": "^11.5",
+    "typo3/cms-reports": "^11.5",
+    "typo3/cms-rte-ckeditor": "^11.5",
+    "typo3/cms-setup": "^11.5",
+    "typo3/cms-sys-note": "^11.5",
+    "typo3/cms-t3editor": "^11.5",
+    "typo3/cms-tstemplate": "^11.5",
+    "typo3/cms-viewpage": "^11.5",
+    "helhum/config-loader": "~0.11",
+    "helhum/typo3-console": "^7.1",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "composer/composer": "*",
+    "cpsit/auditor": "dev-develop as 0.7.0",
+    "dwenzel/reporter": "dev-develop as 0.5.0",
+    "dwenzel/reporter-api": "dev-develop as 0.1.0",
+    "nimut/testing-framework": "^6.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DWenzel\\Reporter\\Tests\\": "app/web/typo3conf/ext/reporter/Tests",
+      "DWenzel\\ReporterApi\\": "app/vendor/dwenzel/reporter-api/src",
+      "DWenzel\\ReporterApi\\Tests\\": "app/vendor/dwenzel/reporter-api/tests"
+    }
+  },
+  "scripts": {
+    "typo3-cms-scripts": [
+      "typo3cms install:fixfolderstructure"
+    ],
+    "post-autoload-dump": [
+      "@typo3-cms-scripts"
+    ]
+  }
+}

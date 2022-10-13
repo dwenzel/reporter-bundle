@@ -1,0 +1,16 @@
+/app/*
+!/app/
+
+/app/web/*
+!/app/web/
+!/app/web/.htaccess
+!/app/web/typo3conf/
+
+/app/web/typo3conf/*
+!/app/web/typo3conf/LocalConfiguration.php
+!/app/web/typo3conf/AdditionalConfiguration.php
+!/backup/.gitkeep
+/tmp
+
+!/var/
+/var/*
