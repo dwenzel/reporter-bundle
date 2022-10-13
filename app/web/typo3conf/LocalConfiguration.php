@@ -4,7 +4,6 @@ return [
         'debug' => false,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=2$NEo4SVJpUEQ0RzFva1VXTg$JM0x+NilHbRW5+Trr2xWOQ0AWUdgLz2/WE2JUFrR654',
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -18,11 +17,10 @@ return [
             ],
         ],
     ],
-    'EXT' => [
-        'extConf' => [
-            'backend' => 'a:6:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:11:"backendLogo";s:0:"";s:14:"backendFavicon";s:0:"";}',
-            'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
-            'scheduler' => 'a:2:{s:11:"maxLifetime";s:4:"1440";s:15:"showSampleTasks";s:1:"1";}',
+    'EXT' => [],
+    'EXTCONF' => [
+        'helhum-typo3-console' => [
+            'initialUpgradeDone' => '11.5',
         ],
     ],
     'EXTENSIONS' => [
@@ -33,19 +31,18 @@ return [
             'loginFootnote' => '',
             'loginHighlightColor' => '',
             'loginLogo' => '',
+            'loginLogoAlt' => '',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
         ],
-        'scheduler' => [
-            'maxLifetime' => '1440',
-            'showSampleTasks' => '1',
+        't3extension_tools' => [
+            'extensionServiceEnabled' => '0',
         ],
     ],
     'FE' => [
         'debug' => false,
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -77,7 +74,6 @@ return [
             'unifiedPageTranslationHandling' => true,
         ],
         'sitename' => 'DEV reporter TYPO3 site',
-        'systemLogLevel' => 2,
         'systemMaintainers' => [
             1,
         ],
