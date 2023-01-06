@@ -73,6 +73,7 @@
     "ext-json": "*"
   },
   "require-dev": {
+    "roave/security-advisories": "dev-latest",
     "composer/composer": "*",
     "cpsit/auditor": "dev-develop as 0.7.0",
     "dwenzel/reporter": "dev-develop as 0.5.0",
