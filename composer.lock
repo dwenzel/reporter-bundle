@@ -7957,19 +7957,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dwenzel/reporter-api.git",
-                "reference": "069b11ff77d0fcb8301bea55670aaf3a7943aec0"
+                "reference": "eefd1ea39c750f6bb40b651809b4191773104996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dwenzel/reporter-api/zipball/069b11ff77d0fcb8301bea55670aaf3a7943aec0",
-                "reference": "069b11ff77d0fcb8301bea55670aaf3a7943aec0",
+                "url": "https://api.github.com/repos/dwenzel/reporter-api/zipball/eefd1ea39c750f6bb40b651809b4191773104996",
+                "reference": "eefd1ea39c750f6bb40b651809b4191773104996",
                 "shasum": ""
             },
             "require": {
                 "bittyphp/http": "^2.1",
                 "cpsit/auditor": "~0.4",
                 "myclabs/php-enum": "^1.7",
-                "web-token/jwt-framework": "^3.1"
+                "php": ">=7.4",
+                "web-token/jwt-framework": "^2.0 || ^3.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.6 || ^6.0",
@@ -8004,7 +8005,7 @@
                 "source": "https://github.com/dwenzel/reporter-api/tree/develop",
                 "issues": "https://github.com/dwenzel/reporter-api/issues"
             },
-            "time": "2023-01-06T14:52:06+00:00"
+            "time": "2023-01-06T15:07:47+00:00"
         },
         {
             "name": "dwenzel/t3extension-tools",
